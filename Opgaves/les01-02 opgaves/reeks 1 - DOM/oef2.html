@@ -35,7 +35,17 @@
 		</div>
 	</div>
 	<script>
-		// your code here...
+		let btnAdd = document.querySelector('#btnAdd');
+		let msgOut = document.getElementById('txtOut');
+		let msgIn = document.getElementById('inpIn');
+		//wanneer je op de button klikt
+		btnAdd.addEventListener('click', function() {
+			console.log(msgIn.value);
+			//msgIn.value naar msgOut overzetten + tekst in msgIn leegmaken
+			msgOut.innerHTML += msgIn.value + '<br>';
+			msgIn.value = '';
+		});
+		
 	</script>
 </body>
 </html>

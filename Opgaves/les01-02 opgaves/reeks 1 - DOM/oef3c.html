@@ -13,6 +13,7 @@
 		button, input[type=button] { border: 1px solid; background-color: #ccc; cursor: pointer; padding: 5px 10px; } 
 		button:hover, input[type=button]:hover { background-color: #ddd; } 
 		img { max-width: 100%; }
+		button {float: left;}
 	</style>
 </head>
 <body>
@@ -26,8 +27,11 @@
 	</div>
 	<img src="https://bitmatters.be/o/img/photo6-m.jpg" alt="" id="imgBig">
 	<p class="title">foto 1: stad nabij Petra</p>
-	<p><button id="btnNext">volgende</button></p>
-			
+	<p><button id="btnNext">volgende</button></p> 
+	<p><button id="btnBack">Vorige</button></p>
+	<p><button id="btnFirst">Eerste</button></p>
+	<p><button id="btnLast">Laatste</button></p>
+
 	<script>
 		let photos = [
 			{ url: 'https://bitmatters.be/o/img/photo1-m.jpg', title: 'stad nabij Petra'},
@@ -37,7 +41,53 @@
 			{ url: 'https://bitmatters.be/o/img/photo3-m.jpg', title: 'Ait Ben Haddou, Marokko'},
 			{ url: 'https://bitmatters.be/o/img/photo20-m.jpg', title: 'Bevroren bomen, Finland'}
 		];
-		// your code here...
+		let btnNext = document.querySelector('#btnNext');
+		let btnBack = document.querySelector('#btnBack');
+		let btnFirst = document.querySelector('#btnFirst');
+		let btnLast = document.querySelector('#btnLast');
+		let big = document.querySelector('#imgBig');
+		let title = document.querySelector('.title');
+		let photo = big.querySelector('img');
+		let i = 2;
+
+		//codes runnen voordat window pagina open gaat
+		window.addEventListener('load', function() {
+			//button om naar de volgende img
+			btnNext.addEventListener('click', function() {
+				i++;
+				if (i == photos.length) {
+					i = 0;
+				}
+					big.src = photos[i].url;
+					big.alt = "Foto " + (i + 1) + ":" + photos[i].title;
+					title.innerHTML = big.alt;
+			});
+			//button om naar de vorige img
+			btnBack.addEventListener('click', function(){
+				i--;
+				if (i == -1){
+					i = photos.length -1;
+				}
+					big.src = photos[i].url;
+					big.alt = "Foto " + (i + 1) + ":" + photos[i].title;
+					title.innerHTML = big.alt;
+			});
+			//button om naar de eerste img
+			btnFirst.addEventListener('click', function(){
+				i = 0;
+					big.src = photos[i].url;
+					big.alt = "Foto " + (i + 1) + ":" + photos[i].title;
+					title.innerHTML = big.alt;
+			});
+			//button om naar de laatste img
+			btnLast.addEventListener('click', function() {
+				i = 5;
+					big.src = photos[i].url;
+					big.alt = "Foto " + (i + 1) + ":" + photos[i].title;
+					title.innerHTML = big.alt;
+			});
+		}); 
+		
 	</script>
 </body>
 </html>

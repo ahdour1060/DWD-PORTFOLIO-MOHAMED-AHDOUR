@@ -34,7 +34,15 @@
 			'https://bitmatters.be/o/img/photo3-m.jpg',
 			'https://bitmatters.be/o/img/photo20-m.jpg'
 		];
-		// your code here...
+		let btnRandom = document.querySelector('#btnRandom');
+		//wanneer je op de button klikt
+		btnRandom.addEventListener('click', function() {
+			console.log('ok');
+			//Gaat willekeurig van img veranderen
+			let rndm = Math.floor(Math.random()* photos.length);
+			console.log(rndm);
+			document.getElementById('imgBig').src = photos [rndm];
+		});
 	</script>
 </body>
 </html>
