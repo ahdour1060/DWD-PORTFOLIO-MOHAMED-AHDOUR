@@ -20,14 +20,22 @@
 		</ol>
 	</div>
 	<ul class="navigator">
-		<li><a href="https://www.google.be">Google</a></li>
-		<li><a href="https://www.odisee.be">Odisee</a></li>
-		<li><a href="https://www.youtube.com">Youtube</a></li>
-		<li><a href="https://en.wikipedia.org">Wikipedia</a></li>
+		<li><a href="https://www.google.be" onclick="disableLink();return false;" title="Google">Google</a></li>
+		<li><a href="https://www.odisee.be" onclick="disableLink();return false;" title="Odisee">Odisee</a></li>
+		<li><a href="https://www.youtube.com" onclick="disableLink();return false;" title="Youtube">Youtube</a></li>
+		<li><a href="https://en.wikipedia.org" onclick="disableLink();return false;" title="Wikipedia">Wikipedia</a></li>
 	</ul>
 	<p>Aangeklikte link: <span id="msg"></span></p>
 	<script>
-		// your code here...
+		let link = document.getElementById('msg');
+		let nav = document.querySelector('.navigator');
+
+		function disableLink() {
+			nav.disabled = true;
+			
+		}
+			
+		
 	</script>
 </body>
 </html>

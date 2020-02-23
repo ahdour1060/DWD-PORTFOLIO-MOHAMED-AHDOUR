@@ -32,7 +32,16 @@
 	</form>
 	<p>Login/paswoord combinatie: <span id="msg"></span></p>
 	<script>
-		// your code here...
+		let myEmail = document.getElementById('inpEmail');
+		let myPassword = document.getElementById('inpPassword');
+		let btnLogin = document.getElementById('btnLogin');
+		let msg = document.getElementById('msg');
+
+		btnLogin.addEventListener('click', function() {
+			msg.innerHTML = myEmail.value + '/' + myPassword.value;
+		});
+
+		
 	</script>
 </body>
 </html>

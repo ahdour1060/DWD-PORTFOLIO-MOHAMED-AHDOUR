@@ -27,7 +27,18 @@
 	<p><input type="button" value="reset" id="btnReset"></p>
 			
 	<script>
-		// your code here...
+		let slider = document.getElementById('rng1');
+		let output = document.getElementById('num');
+		let btnReset1 = document.getElementById('btnReset');
+
+		slider.oninput = function() {
+			output.innerHTML = slider.value;
+		}
+
+		btnReset1.addEventListener('click', function() {
+			output.innerHTML = slider.value = 5;
+		});
+	
 	</script>
 </body>
 </html>
