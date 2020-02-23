@@ -24,7 +24,19 @@
 	<button id="btn1">verberg tekst</button>
 	<p id="txt1">Af producten ze opbrengst op denkbeeld te. Ongebruikt wie losgemaakt zee was ingezameld een. Rijen te heele dient op moest in in komen. Federatie gesteente al na daaronder. Zes bezorgden men ter verkoopen leeningen gewijzigd. Nu apen hier ik daad en dank. </p>
 	<script>
-		// your code here...
+		let button1 = document.getElementById('btn1');
+
+		button1.addEventListener('click', function() {
+			let x = document.getElementById('txt1');
+				if(x.style.display === 'none') {
+					x.style.display = 'block';
+					button1.textContent = ' verberg tekst'
+				}
+				else {
+					x.style.display = 'none';
+					button1.textContent = 'toon tekst'
+				}
+		});
 	</script>
 </body>
 </html>

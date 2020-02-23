@@ -25,7 +25,12 @@
 	<div class="box">
 	</div>
 	<script>
-		// your code here...
+		let rotatie = document.getElementById('rngRotate');
+		let box1 = document.querySelector('.box');
+
+		rotatie.addEventListener("change", function() {
+           	box1.style.WebkitTransform = 'rotate('+ rotatie.value +'deg)';
+          });
 	</script>
 </body>
 </html>

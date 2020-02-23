@@ -66,7 +66,52 @@
 		<p id="pStyles">Stijlen: <span>(geen geselecteerd)</span></p>
 	</div>
 	<script>
-		// your code here...
+		let btnFilter1 = document.querySelector('#btnFilter');
+		let btnClear1 = document.querySelector('#btnClear');
+		let radioBtn = document.getElementsByName('category');
+		let searchSpan = document.querySelector('#pSearch span');
+		let search = document.querySelector('#inpSearch');
+		let typeSpan = document.querySelector('#pType span');
+		let typeSel = document.querySelector('#selType');
+		let categorySpan= document.querySelector('#pCategory span');
+		let checkboxBtn = document.querySelectorAll('.checkboxlist.styles input');
+		let checkboxChecked = [];
+		let styleSpan = document.querySelector('#pStyles span');
+		let inputCheck = document.querySelector('input[name="category"]:checked');
+		let checkedRadio = document.querySelector('.categories input[type=radio]:checked');
+		if (checkedRadio) console.log(checkedRadio.value);
+
+		btnFilter1.addEventListener('click', function() {
+			searchSpan.innerHTML = search.value;
+			typeSpan.innerHTML = typeSel.value;
+			categorySpan.innerHTML = checkedRadio.value;
+			for	(let i = 0; i < checkboxBtn.length; i++) {
+				if (checkboxBtn[i].checked) {
+					checkboxChecked.push(checkboxBtn[i].value);
+				};
+			};
+			styleSpan.innerHTML = checkboxChecked;
+			checkboxChecked = [];
+		});
+
+		btnClear1.addEventListener('click', function() {
+			search.value = '';
+			typeSel.selectedIndex = 0;
+			for (let i = 0; i < radioBtn.length; i ++) radioBtn[i].checked = false;
+			for (let i = 0; i < checkboxBtn.length; i ++ ) checkboxBtn[i].checked = false;
+		});
+
+		document.querySelector('.filters').addEventListener('input', function() {
+			searchSpan.innerHTML = search.value;
+			typeSpan.innerHTML = typeSel.value;
+			document.querySelector('#pCategory span').innerHTML = document.querySelector('input[name="category"]:checked').value;
+			styleSpan.innerHTML = inputCheck.value;			
+			for	(let i = 0; i < checkboxBtn.length; i++) {
+				if (checkboxBtn[i].checked) {
+					checkboxChecked.push(checkboxBtn[i].value);
+				};
+			};
+		});
 	</script>
 </body>
 </html>
