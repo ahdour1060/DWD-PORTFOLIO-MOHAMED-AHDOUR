@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Filter-oefening</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="van.css">
+</head>
+<body>
+	<div class="img-container">
+		<img src="./img/van.jpg" alt="van" id="imageVan">
+	</div>
+	
+	<div class="btn-container">
+		<button id="btnNormal">NORMAL</button>
+		<button id="btnGrayscale">GRAYSCALE</button>
+		<button id="btnSepia">SEPIA</button>
+		<button id="btnHue">HUE</button>
+		<button id="btnBlur">BLUR</button>
+	</div>
+
+	<div class="opacity-container">
+		<p>OPACITY :</p>
+		<input type="range" id="rangeOpacity" min="0" max="100" value="100">
+		<p><span id="num">100%</span></p>
+	</div>
+
+	<script src="van.js"></script>
+</body>
+</html>

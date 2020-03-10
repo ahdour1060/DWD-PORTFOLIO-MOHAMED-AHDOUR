@@ -43,15 +43,15 @@
 		let selFam = document.getElementById('selFamily');
 
 		color.addEventListener('change', function() {
-			text1.style.color = color.value;
+			text1.style.color = this.value;
 		});
 
 		size.addEventListener('input', function() {
-			text1.style.fontSize = size.value + 'px';
+			text1.style.fontSize = this.value + 'px';
 		});
 
 		selFam.addEventListener('change', function() {
-			text1.style.fontFamily = selFam.value;
+			text1.style.fontFamily = this.value;
 		});
 	</script>
 </body>

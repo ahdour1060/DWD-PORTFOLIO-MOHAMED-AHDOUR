@@ -37,7 +37,8 @@
 		let btnLogin = document.getElementById('btnLogin');
 		let msg = document.getElementById('msg');
 
-		btnLogin.addEventListener('click', function() {
+		btnLogin.addEventListener('click', function(e) {
+			e.preventDefault();
 			msg.innerHTML = myEmail.value + '/' + myPassword.value;
 		});
 

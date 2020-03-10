@@ -38,6 +38,7 @@
 			//Veld wordt gewist wanneer er op enter gedrukt is
 			msgIn.addEventListener('keypress', function(e) {
 				if (e.key == 'Enter') {	
+					e.preventDefault();
 					msgIn.value = '';
 				}
 			});

@@ -42,10 +42,12 @@
 		btnAdd.addEventListener('click', function() {
 			console.log(msgIn.value);
 			//msgIn.value naar msgOut overzetten + tekst in msgIn leegmaken
-			msgOut.innerHTML += msgIn.value + '<br>';
+			msgOut.innerHTML += msgIn.value + '<br>'; //<br> naar volgende lijn
 			msgIn.value = '';
 		});
 		
+		//innerhtml = runt alles opnieuw
+		//text.content = performance
 	</script>
 </body>
 </html>

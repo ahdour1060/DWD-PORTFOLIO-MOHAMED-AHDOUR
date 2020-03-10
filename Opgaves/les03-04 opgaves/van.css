@@ -1,0 +1,53 @@
+#imageVan {
+    margin: auto;
+}
+
+.img-container, .btn-container, .opacity-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 1em;
+    font-size: 1,5vh;
+    padding: 1vh 3vh 1vh 3vh;
+    background-color: lightgrey;
+    border-color: black;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+#rangeOpacity {
+    width: 30%;
+}
+
+.opacity-container p {
+    margin: 3vh;
+    font-family: 'Trebuchet MS';
+}
+
+.normal {
+    filter: none;
+}
+
+.grayscale {
+    filter: grayscale(50%);
+}
+
+.sepia {
+    filter: sepia(100%);
+}
+
+.hue {
+    filter: hue-rotate(50deg);
+}
+
+.blur {
+    filter: blur(10px);
+}
+
+
