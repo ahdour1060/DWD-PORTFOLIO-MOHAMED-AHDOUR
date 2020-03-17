@@ -1,5 +1,16 @@
 window.addEventListener('load', function() {
 
+    //let van;
+    //let filters;
+    /*let restet = function() {
+        VRDisplayEvent.classList.remove('gray');
+        for (let filter of filters)  {
+        filter.classList.remove('active')
+        }
+    }*/
+
+    // => betekent 'function'
+
     let img = document.getElementById('imageVan');
 
     let btnNormal = document.getElementById('btnNormal');
@@ -8,7 +19,7 @@ window.addEventListener('load', function() {
     let btnHue = document.getElementById('btnHue');
     let btnBlur = document.getElementById('btnBlur');
 
-    let range = this.document.getElementById('rangeOpacity');
+    let range = document.getElementById('rangeOpacity');
 
     range.addEventListener('change', function() {
         let val = this.value;

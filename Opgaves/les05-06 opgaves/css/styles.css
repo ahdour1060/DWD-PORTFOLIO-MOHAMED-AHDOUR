@@ -87,6 +87,8 @@ body {
     right: 10px;
     top: -5px;
     width: 45rem;
+    transform: translateY(-100%); /*gaat 100% naar boven buiten het scherm staan*/
+    transition: transform 0.3s;
 }
 
 .modal__title {
@@ -94,6 +96,10 @@ body {
     font-size: 2.4rem;
     font-weight: 400;
     margin: 1rem 0 2rem 0;
+}
+
+#loginmodal.show {
+    transform: translateY(0%); /*komt weer op zijn plaats, 0% buiten het scherm*/
 }
 
 /* ===========================================
