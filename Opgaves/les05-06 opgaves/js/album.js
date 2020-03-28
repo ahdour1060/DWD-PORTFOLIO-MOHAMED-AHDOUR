@@ -75,13 +75,27 @@
             let large = document.querySelector('#large__figure');
             let largeTitle = document.querySelector('.large__title');
             let photo = large.querySelector('img');
-
+            let linkf = document.getElementById('lnkFirst');
+            let linkl = document.getElementById('lnkLast');
+            
+            linkl.addEventListener('click', (e) => {
+                e.preventDefault();
+                //show last image
+                photo.src = document.querySelector('link').href=('img/photo25.jpg');
+                largeTitle.innerHTML = document.querySelector('img').alt=('Oase, Algerije');
+            });
+            linkf.addEventListener('click', (e) => {
+                e.preventDefault();
+                //show first image
+                photo.src = document.querySelector('link').href=('img/photo1.jpg');
+                largeTitle.innerHTML = document.querySelector('img').alt=('stad nabij Petra, Jordanië (2018)');
+            });
             //attach click events to thumbnails
-            for (let thumb of thumbs) {
+            for(let thumb of thumbs) {
                 let link = thumb.querySelector('a');
                 let img = thumb.querySelector('img');
+
                 link.addEventListener('click', (e) => {
-                    //prevent default link action
                     e.preventDefault();
                     //show image
                     photo.src = link.href;
@@ -90,8 +104,10 @@
                     //change active state
                     document.querySelector('.main__thumbs .active').classList.remove('active');
                     thumb.classList.add('active');
+
                 });
             }
 
+            
         });
 })();
