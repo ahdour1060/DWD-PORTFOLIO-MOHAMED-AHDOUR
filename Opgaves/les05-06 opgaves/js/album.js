@@ -75,8 +75,12 @@
             let large = document.querySelector('#large__figure');
             let largeTitle = document.querySelector('.large__title');
             let photo = large.querySelector('img');
+
             let linkf = document.getElementById('lnkFirst');
             let linkl = document.getElementById('lnkLast');
+            let linkp = document.getElementById('lnkPlay');
+            let linkn = document.getElementById('lnkNext');
+            
             
             linkl.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -90,6 +94,9 @@
                 photo.src = document.querySelector('link').href=('img/photo1.jpg');
                 largeTitle.innerHTML = document.querySelector('img').alt=('stad nabij Petra, Jordanië (2018)');
             });
+
+            
+         
             //attach click events to thumbnails
             for(let thumb of thumbs) {
                 let link = thumb.querySelector('a');
@@ -106,8 +113,63 @@
                     thumb.classList.add('active');
 
                 });
-            }
+            } 
 
+            ///////////////////////////////// PAGE FILTER /////////////////////////
+
+            //aliases
+            let selAlbum = document.getElementById('selAlbum');
+            let checkboxes = document.querySelectorAll('.filter__years label input[type=checkbox]');
+            let inpSearch = document.getElementById('inpSearch');
+
+            let btnReset = document.getElementById('btnReset');
+            let btnSearch = document.getElementById('btnSearch');
             
+            
+
+            btnSearch.addEventListener('click', (e) => {
+                e.preventDefault();
+                thumbs.forEach( (e) => {
+                    e.classList.add('hide');
+                });
+
+                if(selAlbum.value == -1) {
+                    thumbs.forEach( (e) => {
+                        e.classList.remove('hide');
+                    });
+                } else {
+                    thumbs.forEach( (e) => {
+                        if(e.classList.contains('hide') && e.dataset.albumid == selAlbum.value)
+                            e.classList.remove('hide');
+                    })
+                }
+
+
+                let VisibleThumbs = document.querySelectorAll('figure:not(.hide)');
+                if(inpSearch.value != ''){
+                    thumbs.forEach(e => {
+                        if(!e.classList.contains('hide'))
+                            e.classList.add('hide');
+                    });
+                    let trefwoord = inpSearch.value.toLowerCase();
+                    VisibleThumbs.forEach(e => {
+                        let alt = e.querySelector('img').alt.toLowerCase();
+                        if(alt.includes(trefwoord)) e.classList.remove('hide');
+                    });
+                }
+                
+            })
+
+            btnReset.addEventListener('click', (e) => {
+                e.preventDefault();
+                thumbs.forEach( (e) => {
+                    e.classList.remove('hide');
+                });
+
+                selAlbum.value = -1;
+                inpSearch.value = '';
+            })
+
+
         });
 })();
