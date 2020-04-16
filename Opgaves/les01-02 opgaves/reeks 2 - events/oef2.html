@@ -20,20 +20,41 @@
 		</ol>
 	</div>
 	<ul class="navigator">
-		<li><a href="https://www.google.be" onclick="disableLink();return false;" title="Google">Google</a></li>
-		<li><a href="https://www.odisee.be" onclick="disableLink();return false;" title="Odisee">Odisee</a></li>
-		<li><a href="https://www.youtube.com" onclick="disableLink();return false;" title="Youtube">Youtube</a></li>
-		<li><a href="https://en.wikipedia.org" onclick="disableLink();return false;" title="Wikipedia">Wikipedia</a></li>
+		<li><a href="https://www.google.be" title="Google">Google</a></li>
+		<li><a href="https://www.odisee.be" title="Odisee">Odisee</a></li>
+		<li><a href="https://www.youtube.com" title="Youtube">Youtube</a></li>
+		<li><a href="https://en.wikipedia.org" title="Wikipedia">Wikipedia</a></li>
 	</ul>
 	<p>Aangeklikte link: <span id="msg"></span></p>
 	<script>
-		let link = document.getElementById('msg');
-		let nav = document.querySelector('.navigator');
+		//let link = document.getElementById('msg');
+		let navigator = document.querySelector('.navigator');
 
 		function disableLink() {
-			nav.disabled = true;
+			navigator.disabled = true;
 			
-		}			
+		}		
+		
+		/*function showLink(){
+			document.getElementById('msg').innerHTML = document.querySelector('ul li').innerHTML;
+		}*/
+
+	
+
+		function myFunction( web, klik) {
+			let tussenhaakjes = "link";
+			let resultaat = tussenhaakjes.link(klik);
+			document.getElementById("msg").innerHTML = web + "(" + resultaat + ")";
+			
+		}
+		
+		navigator.addEventListener('click', (e) => {
+			event.preventDefault();
+			disableLink();
+			myFunction();
+			
+		});
+		
 		
 	</script>
 </body>
