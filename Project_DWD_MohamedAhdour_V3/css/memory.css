@@ -1,0 +1,307 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+#mute{
+    height: 33px;
+    width: 33px;
+    position: absolute;
+    top: 33px;
+    right: 33px;
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+}
+
+#mute img{
+    height: 100%;
+}
+
+
+/* ****************************************** */
+/* ****************** INDEX ***************** */
+/* ****************************************** */
+#headerIndex-container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+#headerIndex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.btnStartIndex{
+    margin: 20px;
+    padding: 10px 70px 10px 70px;
+    font-family: "MEMORY GAME";
+    font-size: 15px;
+    background-color: #F8BD1C;
+    color:rgb(16, 40, 122) ;
+    border: solid black;
+    border-radius: 10px;
+}
+
+.btnStartIndex:hover{
+    transform: scale(1.1);
+}
+
+#timer{
+    display: none;
+}
+
+#timer span{
+    color: red;
+}
+
+#info-hover{
+    cursor: pointer;
+    height: 90px;
+    width: 250px;
+}
+
+#info-container{
+    transform: translate(-150%);
+    background-color: rgba(142, 147, 163, 1.1); 
+    text-align: left;
+    padding: 10px;
+    display: none;
+    
+}
+
+#info-hover:hover #info-container{
+    display: block;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    border: solid #F8BD1C;
+    height: 250px;
+    width: 600px;
+}
+
+/* ****************************************** */
+/* ****************** MEMORY ***************** */
+/* ****************************************** */
+
+header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 300px;
+}
+
+#header1{
+    text-align: center;
+    padding: 20px;
+    /* background-color: green; */
+}
+
+#header1.hide{
+    display: none;
+} 
+
+#header2, #won-container, #lose-container{
+    position: absolute;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(-100%); /*gaat 100% naar boven buiten het scherm staan*/
+    /* background-color: red; */
+}
+
+
+
+.find-me{
+    display: flex;
+    flex-direction:  row;
+    justify-content: center;
+    background-color: rgba(142, 147, 163, 0.5); 
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+#header2.show{
+    transform: translateY(0%); /*komt weer op zijn plaats, 0% buiten het scherm*/
+}
+
+#won-container.show{
+    transform: translateY(0%); /*komt weer op zijn plaats, 0% buiten het scherm*/;
+}
+
+#lose-container.show{
+    transform: translateY(0%); /*komt weer op zijn plaats, 0% buiten het scherm*/;
+}
+
+
+.next1{
+    background-color: rgba(142, 147, 163, 0.5);
+    padding: 10px;
+    border-radius: 7px; 
+
+}
+h1{
+    font-family: "MEMORY GAME", serif ;
+    font-size: 70px;
+    color: #F8BD1C;
+    padding: 10px;
+}
+
+p{
+    color: white;
+    font-style: bold;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.btnStart, .btnNext2, .btnTryAgain, .btnNext3{
+    padding: 10px 70px 10px 70px;
+    font-family: "MEMORY GAME";
+    font-size: 15px;
+    background-color: #F8BD1C;
+    color:rgb(16, 40, 122) ;
+    border: solid black;
+    border-radius: 10px;
+}
+
+.btnStart:hover, .btnNext2:hover, .btnTryAgain:hover, .btnNext3:hover{
+    transform: scale(1.1);
+}
+
+.btnStart:active, .btnNext2:hover, .btnTryAgain:hover, .btnNext3:hover{
+    transform: scale(1.05);
+}
+
+body{
+    height: 100vh;
+    background-color: rgb(40, 68, 161);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* ********************** flip the cards ********************** */
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card */
+
+.card-container{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 20px;
+    height: auto;
+}
+
+.card-container2{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 20px;
+    height: auto;
+}
+
+.card-container3{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 20px;
+    height: auto;
+}
+
+.flip-card{
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+}
+
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    opacity: 0.5;
+}
+
+.flip-card-back{
+    transform: rotateY(180deg);   
+}
+
+.flipi{
+    transform: rotateY(180deg);
+}
+
+
+
+
+/* ********************** Voor phones ********************** */
+@media screen and (max-width: 626px) {
+    h1 {
+      font-size: 36px;
+    }
+
+    #header1 {
+        position: absolute;
+    }
+
+    .card-container {
+        margin-top: 275px;
+        grid-template-rows: repeat(3, 100px);
+        grid-template-columns: repeat(2, 100px);
+        margin-bottom: 33px;
+    }
+
+    .card-container2 { 
+        margin-top: 275px;
+        grid-template-rows: repeat(4, 100px);
+        grid-template-columns: repeat(2, 100px);
+        margin-bottom: 33px;
+    }
+
+    .card-container3 {
+        margin-top: 275px;
+        grid-template-rows: repeat(5, 100px);
+        grid-template-columns: repeat(2, 100px);
+        margin-bottom: 33px;
+    }
+
+    
+    #info-container{
+        transform: translate(-150%);
+        background-color: rgba(142, 147, 163, 1.1); 
+        text-align: left;
+        padding: 10px;
+        display: none;
+        
+    }
+    
+    #info-hover:hover #info-container{
+        transform: translate(-0%);
+        height: auto;
+        width: auto;
+    }
+  }

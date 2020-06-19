@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/memory.css">
+    <link rel="stylesheet" href="https://www.1001fonts.com/video-game-fonts.html?text=MEMORY+GAME&fg=d6a829">
+
+    <title>Memorie spel</title>
+</head>
+
+<body>
+        <audio id="win"><source src="/sounds/win.mp3"type="audio/mp3" ></audio>
+        <audio id="lose"><source src="/sounds/lose.mp3"type="audio/mp3" ></audio>
+        <audio id="alarm"><source src="/sounds/alarm.mp3"type="audio/mp3" ></audio>
+        <audio id="music" autoplay loop><source src="/sounds/music.mp3"type="audio/mp3" ></audio>
+        <button id="mute"><img src="/images/icon/mute.png" alt="mute"></button>
+    <header>
+
+        <div id="header1">
+            <h1>MEMORY GAME</h1>
+            <p>Welkom <span class="loginname"></span> leuk om je hier te zien! <br/> Ready voor niveau 1? <br> Onthoud de gezichten en hun positie.</p>
+            <button class="btnStart">READY !</button>
+        </div>
+
+        <div id="header2">
+            <h1 class="level level1">MEMORY GAME</h1>
+            <div class="find-me">
+                <p>Where is ...?</p>
+                <img src="/images/load.png" alt="random flip-card-back img"  style="width:100px;height:100px;border-radius: 10px; border: solid #F8BD1C 3px;">
+            </div>
+        </div>
+
+        <div id="won-container">
+           <h1>MEMORY GAME</h1>
+           <div  class="next1">
+                <p>Goed gedaan <span class="loginname"></span>! Klaar voor niveau 2?</p>
+                <button class="btnNext2">NEXT</button>
+            </div>  
+        </div>
+
+        <div id="lose-container">
+            <h1>MEMORY GAME</h1>
+            <div  class="Try-Again">
+                 <p>Helaas is het fout... Probeer opnieuw</p>
+                 <button class="btnTryAgain">TRY AGAIN</button>
+             </div>  
+         </div>
+
+    </header>
+
+    <div class="card-container">
+
+        <div class="flip-card" id="flip1" >
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/kylie.jpg" data-name="kylie" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" id="flip2">
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/kim k.jpg" data-name="kim" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" id="flip3">
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/khloe.jpg" data-name="kloe" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" id="flip4">
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/kourtney.jpg" data-name="kourtney" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" id="flip5">
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/Kendall.jpg" data-name="Kendall" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="flip-card" id="flip6">
+            <div class="flip-card-inner" >
+                <div class="flip-card-front">
+                    <img src="/images/questionMarkCard.png" alt="question mark" style="width:100px;height:100px;">
+                </div>
+                <div class="flip-card-back">
+                    <img src="/images/kris.jpg" data-name="kris" alt="question mark" style="width:100px;height:100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="timer">
+        <p>U heeft nog <span></span> seconden</p>
+    </div>
+    
+    <script src="/js/memory.js"></script>
+</body>
+
+</html>

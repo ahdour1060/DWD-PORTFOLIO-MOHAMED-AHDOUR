@@ -1,0 +1,51 @@
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/memory.css">
+    <link rel="stylesheet" href="https://www.1001fonts.com/video-game-fonts.html?text=MEMORY+GAME&fg=d6a829">
+
+    <title>Memorie spel</title>
+</head>
+
+<body>
+
+    <audio id="music" autoplay loop><source src="/sounds/music.mp3"type="audio/mp3" ></audio>
+    <button id="mute"><img src="/images/icon/mute.png" alt="mute"></button>
+    
+    <div id="headerIndex-container">
+        <div id="headerIndex">
+            <h1 class="level level0">MEMORY GAME</h1>
+            <p>Geef een Username in om verder te spelen</p>
+            <div>
+                <input id="inpIn" type="text">
+            </div>
+            <div>
+                <button class="btnStartIndex">READY !</button>
+            </div>
+
+            
+
+            <div id="info-hover">
+                <p>wat info nodig? <br> hover hier om info te zien</p>
+            
+                <div id="info-container">
+                    <h2>Spelregels</h2>
+                    <p>Het spel begint wanneer u op de button hierboven drukt "READY". <br> 
+                        Het doel van het spel is om de gezichten en hun positie te onthouden. <br>
+                        Wanneer je ze allemaal onthouden hebt, druk je op ready. <br> 
+                        Je krijgt dan het gezicht van één van de onderstaande gezichten te zien <br> 
+                        en u moet raden op welke plaats het kaart stond door erop te klikken. <br>
+                        Als deze de juiste antwoord is, ga ja naar het volgende niveau. <br>
+                        Er zijn in totaal 3 niveaus en krijgt enkel 1 leven. <br>
+                        Dus als je bijvoorbeeld op niveau 2 zit en op een fout kaart drukt kom je terug naar niveau1. <br>
+                        Pas op, wanneer je ready staat de timer gaat af </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/memory.js"></script>
+</body>
+</html>

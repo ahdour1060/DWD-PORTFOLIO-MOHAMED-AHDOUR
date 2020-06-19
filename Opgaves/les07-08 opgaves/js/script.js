@@ -5,13 +5,12 @@
         e.preventDefault();
         
         let inpArtist = document.getElementById("inpArtist").value;
-        fetch('http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + inpArtist + '"')
-        .then(function(resp) {
+        function handleSuccess(resp) {
             console.log('response status: ', resp.status);
             return resp.json();
-        })
+        }
 
-        .then(function (data) {
+        function handleResponse(data) {
             console.log('data received: ', data);
 
             let songs = document.getElementById("songs");
@@ -22,11 +21,16 @@
             } 
             let hidden = document.querySelector('.hidden');
             hidden.style.opacity = 1;
-        })
+        }
 
-        .catch(function(err) {
+        function handleError(err) {
             console.log('request failed: ', err)
-        })
+        }
+
+        fetch('http://www.songsterr.com/a/ra/songs/byartists.json?artists="' + inpArtist + '"')
+            .then(handleSuccess)
+            .then(handleResponse)
+            .catch(handleError);
 
         
     });
